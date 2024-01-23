@@ -1,12 +1,16 @@
 package org.example.adminmicroservice.service;
 
-import org.example.adminmicroservice.dto.AssuranceAdminDto;
+import org.example.adminmicroservice.dto.AddAssuranceDto;
+import org.example.adminmicroservice.dto.UpdateAssuranceDto;
 
 import java.util.List;
 
 public interface AdminService {
-    List<AssuranceAdminDto> getAllAssurances();
-    AssuranceAdminDto getAssuranceById(int id);
-    AssuranceAdminDto saveAssurance(AssuranceAdminDto assuranceAdminDto);
+    List<AddAssuranceDto> getAllAssurances();
+    AddAssuranceDto getAssuranceById(int id);
+    AddAssuranceDto saveAssurance(AddAssuranceDto addAssuranceDto);
+    UpdateAssuranceDto updateAssurance(int id, UpdateAssuranceDto updateAssuranceDto);
+
+
 
 }

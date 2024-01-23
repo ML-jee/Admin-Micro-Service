@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AssuranceAdminDto {
+public class AddAssuranceDto {
     private int idAssurance;
     private String typeAssurance;
     private String nom;
