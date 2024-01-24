@@ -20,7 +20,7 @@ import lombok.Setter;
 public class AssuranceAdmin {
     @Id
     @Column(name="idAssurance",nullable = false,unique = true,updatable = false)
-    private int idAssurance;
+    private Integer idAssurance;
 
     private String typeAssurance;
     private String nom;

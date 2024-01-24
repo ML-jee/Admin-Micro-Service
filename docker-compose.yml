@@ -1,0 +1,41 @@
+version: '3'
+services:
+  mysqlm:
+    container_name: mysqlm
+    image: mysql:latest
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: db-related-entities
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
+  discovery-service:
+    image: soukaina2002/eurika:latest
+    container_name: eurika1
+    ports:
+      - "8099:8099"
+
+  spring-app-admin:
+    image: soukaina2002/adminmicroservice:latest
+    restart: always
+    build: .
+    ports:
+      - 8088:8087
+    depends_on:
+      - mysqlm
+      - discovery-service
+    environment:
+      MYSQL_HOST: mysqlm
+      MYSQL_PORT: 3306
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqlm:3306/db-related-entities
+      SPRING_DATASOURCE_USERNAME: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
+  API-GATEWAY-SERVICE:
+    image: soukaina2002/api-gateway:latest
+    container_name: api-gateway1
+    ports:
+      - "8084:8084"
+    depends_on:
+      - discovery-service
+      - spring-app-admin

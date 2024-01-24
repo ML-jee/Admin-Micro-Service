@@ -15,9 +15,6 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-
-
-
     @GetMapping("/all")
     public List<AddAssuranceDto> getAllAssurances() {
         return adminService.getAllAssurances();
