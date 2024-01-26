@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface AdminService {
     List<AddAssuranceDto> getAllAssurances();
-    AddAssuranceDto getAssuranceById(int id);
+    AddAssuranceDto getAssuranceById(String id);
     AddAssuranceDto saveAssurance(AddAssuranceDto addAssuranceDto);
-    UpdateAssuranceDto updateAssurance(int id, UpdateAssuranceDto updateAssuranceDto);
+    UpdateAssuranceDto updateAssurance(String id, UpdateAssuranceDto updateAssuranceDto);
 
 
 

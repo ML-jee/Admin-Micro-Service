@@ -13,5 +13,5 @@ public class ClientAssuranceDto {
     private String cin;
     private String nom;
     private String prenom;
-    private int idAssurance;
+    private String idAssurance;
 }

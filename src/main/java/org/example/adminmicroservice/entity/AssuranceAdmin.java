@@ -19,10 +19,9 @@ import lombok.Setter;
 
 public class AssuranceAdmin {
     @Id
-    @Column(name="idAssurance",nullable = false,unique = true,updatable = false)
-    private int idAssurance;
 
-    private String typeAssurance;
+    private String idAssurance;
+
     private String nom;
     private String description;
     private float prix;

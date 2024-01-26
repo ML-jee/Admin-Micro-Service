@@ -29,7 +29,7 @@ public class AdminController {
     }
 
     @GetMapping("/{id}")
-    public AddAssuranceDto getAssuranceById(@PathVariable int id) {
+    public AddAssuranceDto getAssuranceById(@PathVariable String id) {
         return adminService.getAssuranceById(id);
     }
 
@@ -39,7 +39,7 @@ public class AdminController {
     }
 
     @PutMapping("/update/{id}")
-    public UpdateAssuranceDto updateAssurance(@PathVariable int id, @RequestBody UpdateAssuranceDto updateAssuranceDto) {
+    public UpdateAssuranceDto updateAssurance(@PathVariable String id, @RequestBody UpdateAssuranceDto updateAssuranceDto) {
         return adminService.updateAssurance(id, updateAssuranceDto);
     }
 

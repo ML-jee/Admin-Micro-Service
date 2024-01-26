@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public AddAssuranceDto getAssuranceById(int id) {
+    public AddAssuranceDto getAssuranceById(String id) {
         AssuranceAdmin assurance = adminRepository.findById(id).orElse(null);
         return convertToDto(assurance);
     }
@@ -43,7 +43,7 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public UpdateAssuranceDto updateAssurance(int id, UpdateAssuranceDto updateAssuranceDto) {
+    public UpdateAssuranceDto updateAssurance(String id, UpdateAssuranceDto updateAssuranceDto) {
         AssuranceAdmin existingAssurance = adminRepository.findById(id).orElse(null);
 
         if (existingAssurance != null) {
